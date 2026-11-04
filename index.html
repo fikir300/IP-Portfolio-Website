@@ -199,20 +199,16 @@ href="mailto:fikiralex644@gmail.com" alt="Email">
 
 <form action="thank-you.html" method="get">
 
-    <!-- Your Details -->
     <fieldset>
         <legend>Your Details</legend>
 
         <label for="fullname">Full name:</label>
-        <input type="text" id="fullname" name="fullname">
-
+<input type="text" id="fullname" name="fullname" required>
         <br><br>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
+<input type="email" id="email" name="email" required>
     </fieldset>
-
-    <!-- Project Details -->
     <fieldset>
         <legend>Project Details</legend>
 
@@ -261,14 +257,12 @@ href="mailto:fikiralex644@gmail.com" alt="Email">
                min="1" max="10" value="7">
     </fieldset>
 
-    <!-- Your Message -->
     <fieldset>
         <legend>Your Message</legend>
 
         <label for="reason">Reason for contacting me:</label>
 
-        <select id="reason" name="reason">
-            <optgroup label="Work">
+<select id="reason" name="reason" required>            <optgroup label="Work">
                 <option value="internship">Internship offer</option>
                 <option value="freelance">Freelance project</option>
                 <option value="job">Full-time job</option>
