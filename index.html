@@ -19,6 +19,17 @@ developer, HTML">
 title="Fikirte Alemayehu" width="200" height="200">
        
 <p>Software Engineering student and aspiring web developer.</p>
+<button type="button"
+onclick="document.getElementById('hireDialog').showModal()">Hire me</button>
+<dialog id="hireDialog">
+<h2>Available for internships</h2>
+<p>I am available for internships and freelance web projects from June 2027.</p>
+<p><a href="#contact">Send me a message</a> or <a href="files/cv.pdf"
+download>download my CV</a>.</p>
+<button type="button"
+
+onclick="document.getElementById('hireDialog').close()">Close</button>
+</dialog>
 <nav>
 <a href="#about">About</a> |
 <a href="#skills">Skills</a> |
