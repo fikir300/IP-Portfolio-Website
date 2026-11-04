@@ -14,7 +14,9 @@ developer, HTML">
     
     <body>
      <header> 
-        <h1>Fikirte Alemayehu</h1>
+<canvas id="logo" width="120" height="120">
+    Your browser does not support canvas.
+</canvas>        <h1>Fikirte Alemayehu</h1>
         <img src="images/profile.jpg" alt="Portrait of Fikirte Alemayehu"
 title="Fikirte Alemayehu" width="200" height="200">
        
@@ -120,7 +122,11 @@ allowfullscreen>
     <meter id="lvl-cpp" value="0.55" min="0" max="1">55%</meter>
     55%
 </p>
+<h3>Skills Bar Chart</h3>
 
+<canvas id="skillsChart" width="300" height="150">
+    Your browser does not support canvas.
+</canvas>
 <h3>My Learning Roadmap</h3>
 <ol type="i">
 <li>HTML structure and content</li>
@@ -365,6 +371,52 @@ title="Map of my university campus">
 <footer>
    <p>Last updated: <time datetime="2026-11-04">4 November 2026</time></p>
 <p>&copy; 2026 Fikirte Alemayehu. All rights reserved.</p></footer>
+<script>
+const canvas = document.getElementById('logo');
+const ctx = canvas.getContext('2d');
+
+ctx.fillStyle = "#1f5fa8";
+ctx.fillRect(0, 0, 120, 120);
+
+ctx.beginPath();
+ctx.arc(60, 60, 45, 0, 2 * Math.PI);
+ctx.fillStyle = "white";
+ctx.fill();
+
+ctx.fillStyle = "#1f5fa8";
+ctx.font = "bold 36px Arial";
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+ctx.fillText("FA", 60, 62);
+</script>
+<script>
+const skillsCanvas = document.getElementById('skillsChart');
+const skillsCtx = skillsCanvas.getContext('2d');
+
+const skills = [
+    { name: "HTML", value: 70 },
+    { name: "Python", value: 60 },
+    { name: "JavaScript", value: 20 },
+    { name: "C++", value: 55 }
+];
+
+skillsCtx.fillStyle = "#1f5fa8";
+skillsCtx.font = "12px Arial";
+skillsCtx.textAlign = "center";
+
+skills.forEach((skill, index) => {
+    const barHeight = (skill.value / 100) * 120;
+    const x = 15 + index * 70;
+    const y = 130 - barHeight;
+
+    skillsCtx.fillRect(x, y, 35, barHeight);
+
+    skillsCtx.fillStyle = "#000";
+    skillsCtx.fillText(skill.name, x + 17.5, 145);
+
+    skillsCtx.fillStyle = "#1f5fa8";
+});
+</script>
 </body>
 
 </html>
